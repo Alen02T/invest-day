@@ -5,12 +5,16 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { EmptyComponentComponent } from './components/empty-component/empty-component.component';
 import { HomeComponentComponent } from './pages/home/home-component/home-component.component';
+import { SubastasComponent } from './subastas/subastas.component';
+import { Error404Component } from './error404/error404.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     EmptyComponentComponent,
-    HomeComponentComponent
+    HomeComponentComponent,
+    SubastasComponent,
+    Error404Component
   ],
   imports: [
     BrowserModule,
