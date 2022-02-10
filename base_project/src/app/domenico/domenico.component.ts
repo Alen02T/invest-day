@@ -1,12 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'subastas',
+  selector: 'domenico',
   templateUrl: './index.html',
-  styleUrls: ['css/bootstrap.css', 'css/bootshape.css'],
-
+  styleUrls: ['css/bootstrap.css', 'domenico.component.css']
 })
-export class SubastasComponent implements OnInit {
+export class DomenicoComponent implements OnInit {
 
   constructor() { }
 
