@@ -2,11 +2,12 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { DomenicoComponent } from './domenico/domenico.component';
 import { Error404Component } from './error404/error404.component';
+import { HomeComponentComponent } from './pages/home/home-component/home-component.component';
 
 const routes: Routes = [
   {
     path: '',
-    component: DomenicoComponent,
+    component: HomeComponentComponent,
   },
   {
     path: 'domenico',
