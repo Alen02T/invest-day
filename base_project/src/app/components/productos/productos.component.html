@@ -41,6 +41,12 @@
         margin-bottom: 2rem;
       }
     }
+
+    @media screen and (max-width: 300px) {
+      #boton {
+       padding-right: 40px;
+      }
+    }
   </style>
 </head>
 
@@ -54,10 +60,10 @@
           alt="Ropa D&G">
         <div class="card-body p-4 py-0 h-xs-440p">
           <h5 class="card-title font-weight-semi-bold mb-3 w-xl-220p mx-auto">{{item.nombre}}</h5>
-          <p class="price">{{item.precio}}€suuu</p>
+          <p class="price">{{item.precio}}€</p>
         </div>
         <p class="btn w-100 px-4 mx-auto">
-          <a href=""><button class="btn btn-dark w-100" name="add-button">Pujar</button></a>
+          <a href="http://localhost:4200/producto/{{item.IDproducto}}"><button id="boton" class="btn btn-dark w-100" name="add-button">Pujar</button></a>
         </p>
       </div>
     </div>
@@ -72,7 +78,7 @@
         <p class="price">{{item2.precio}}€</p>
       </div>
       <p class="btn w-100 px-4 mx-auto">
-        <a href=""><button class="btn btn-dark w-100" name="add-button">Pujar</button></a>
+        <a href="http://localhost:4200/producto/{{item2.IDproducto}}"><button id="boton" class="btn btn-dark w-100" name="add-button">Pujar</button></a>
       </p>
     </div>
   </div>

@@ -11,6 +11,7 @@ import { DescripcionComponent } from './components/descripcion/descripcion.compo
 import { ProductosComponent } from './components/productos/productos.component';
 import { SeparacionComponent } from './components/separacion/separacion.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { PujasComponent } from './pages/pujas/pujas.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { FooterComponent } from './components/footer/footer.component';
     DescripcionComponent,
     ProductosComponent,
     SeparacionComponent,
-    FooterComponent
+    FooterComponent,
+    PujasComponent
   ],
   imports: [
     BrowserModule,
