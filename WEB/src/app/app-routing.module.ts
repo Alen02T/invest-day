@@ -11,8 +11,8 @@ const routes: Routes = [
     component: HomeComponentComponent,
   },
   {
-    path: 'producto/:IDproducto',
-    component: PujasComponent
+    path: 'producto',
+    component: PujasComponent,
   },
   {
     path: 'domenico',

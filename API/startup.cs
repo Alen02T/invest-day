@@ -21,6 +21,7 @@ public class Startup
         {
             mc.AddProfile(new BookProfile());
             mc.AddProfile(new FaltasProfile());
+            mc.AddProfile(new ProductoProfile());
         });
 
         IMapper mapper = mapperConfig.CreateMapper();
@@ -28,6 +29,7 @@ public class Startup
 
         services.AddSingleton<IBookService, BookService>();
         services.AddSingleton<IFaltasService, FaltasService>();
+        services.AddSingleton<IProductoService, ProductoService>();
 
     }
 

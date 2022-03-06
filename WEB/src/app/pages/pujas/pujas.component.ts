@@ -1,7 +1,7 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { Productos } from '../../models/productos';
-import { ActivatedRoute } from '@angular/router';
-import { PRODUCTOS, PRODUCTOS2 } from 'src/app/utils/constProductos';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Producto } from 'src/app/models/producto.model';
+import { ProductoService } from 'src/app/services/producto.service';
+
 
 @Component({
   selector: 'app-pujas',
@@ -10,17 +10,21 @@ import { PRODUCTOS, PRODUCTOS2 } from 'src/app/utils/constProductos';
 })
 export class PujasComponent implements OnInit {
 
-  IDproducto = 0;
+  @Output() likeEvent = new EventEmitter<string>();
+  productos: Producto[] | null;
 
-  productos: Productos={IDproducto:0, nombre:"",precio:0, ruta:""};
+  @Input() filter: string | null;
 
-  constructor(private activatedRoute: ActivatedRoute) {
-
+  constructor(private _productoService: ProductoService) {
+    this.productos = null;
+    this.filter = null;
   }
 
+  like() {
+    this.likeEvent.emit();
+  }
   ngOnInit(): void {
-    this.activatedRoute.paramMap.subscribe((parameters: any)=> {this.IDproducto=parameters.get("IDproducto")});
-    this.productos=PRODUCTOS.filter((x: Productos) => x.IDproducto== this.IDproducto)[0] || PRODUCTOS2.filter((x: Productos) => x.IDproducto== this.IDproducto)[0];
+     this._productoService.getProductoData().subscribe(apiProductos => this.productos=apiProductos);
   }
 
 }
