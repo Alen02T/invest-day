@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "/home/david/Escritorio/Proyecto-Angular/API/Api.csproj": {}
+    "/home/david-ubuntu/Documentos/Proyecto-Angular/API/Api.csproj": {}
   },
   "projects": {
-    "/home/david/Escritorio/Proyecto-Angular/API/Api.csproj": {
+    "/home/david-ubuntu/Documentos/Proyecto-Angular/API/Api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/david/Escritorio/Proyecto-Angular/API/Api.csproj",
+        "projectUniqueName": "/home/david-ubuntu/Documentos/Proyecto-Angular/API/Api.csproj",
         "projectName": "Api",
-        "projectPath": "/home/david/Escritorio/Proyecto-Angular/API/Api.csproj",
-        "packagesPath": "/home/david/.nuget/packages/",
-        "outputPath": "/home/david/Escritorio/Proyecto-Angular/API/obj/",
+        "projectPath": "/home/david-ubuntu/Documentos/Proyecto-Angular/API/Api.csproj",
+        "packagesPath": "/home/david-ubuntu/.nuget/packages/",
+        "outputPath": "/home/david-ubuntu/Documentos/Proyecto-Angular/API/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/home/david/.nuget/NuGet/NuGet.Config"
+          "/home/david-ubuntu/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net6.0"

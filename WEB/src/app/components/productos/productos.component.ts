@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Productos } from 'src/app/models/productos';
+import { ActivatedRoute } from '@angular/router';
+import { Producto } from 'src/app/models/producto.model';
+import { ProductoService } from 'src/app/services/producto.service';
 
 @Component({
   selector: 'app-productos',
@@ -8,7 +10,17 @@ import { Productos } from 'src/app/models/productos';
 })
 export class ProductosComponent implements OnInit {
 
-  PRODUCTOS: Productos[] = [
+  productos: Producto[] | null;
+
+  constructor(private _productoService: ProductoService, private activeRoute: ActivatedRoute) {
+    this.productos = null;
+  }
+
+  ngOnInit(): void {
+    this._productoService.getProductoData().subscribe(apiProductos => this.productos = apiProductos);
+  }
+
+  /*PRODUCTOS: Productos[] = [
     {
       IDproducto: 1,
       nombre: 'Conjunto de colores',
@@ -50,11 +62,6 @@ export class ProductosComponent implements OnInit {
       ruta: 'assets/img/Camiseta camuflaje.jpg'
     }
     
-  ];
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
+  ];*/
 
 }

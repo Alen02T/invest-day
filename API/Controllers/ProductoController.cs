@@ -10,6 +10,11 @@ public class ProductoController : ControllerBase
     private readonly ILogger<ProductoController> _logger;
     private readonly IProductoService _ProductoService;
 
+    /// <summary>
+    /// Crea un  ProductoController
+    /// </summary>
+    /// <param name="logger">used for logging</param>
+    /// <param name="ProductoService">used for dealing with the producto data</param>
     public ProductoController(ILogger<ProductoController> logger, IProductoService ProductoService)
     {
         _logger = logger;

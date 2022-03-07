@@ -1,17 +1,16 @@
 export class Producto {
-    id: number;
-  
-    nombre: string | null;
+  id: number;
 
-    precio: number;
-  
-    ruta: string | null;
-  
-    constructor() {
-      this.id = 0;
-      this.nombre = null;
-      this.precio = 0;
-      this.ruta = null;
-    }
+  nombre: string;
+
+  precio: number;
+
+  ruta: string;
+
+  constructor() {
+    this.id = 0;
+    this.nombre = "";
+    this.precio = 0;
+    this.ruta = "";
   }
-  
+}

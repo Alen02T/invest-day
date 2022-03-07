@@ -1,0 +1,1 @@
+INSERT INTo Puja VALUES(788, 1)

@@ -1,3 +1,4 @@
+using System.Reflection;
 using AutoMapper;
 
 public class Startup
@@ -12,16 +13,17 @@ public class Startup
     public void ConfigureServices(IServiceCollection services)
     {
         services.AddControllersWithViews();
-        services.AddSingleton<LibraryContext>(_ =>
+        services.AddTransient<LibraryContext>(_ =>
             new LibraryContext(Configuration.GetConnectionString("DefaultConnection")));
 
-
+        services.AddSwaggerGen();
 
         var mapperConfig = new MapperConfiguration(mc =>
         {
             mc.AddProfile(new BookProfile());
             mc.AddProfile(new FaltasProfile());
             mc.AddProfile(new ProductoProfile());
+            mc.AddProfile(new PujaProfile());
         });
 
         IMapper mapper = mapperConfig.CreateMapper();
@@ -30,6 +32,7 @@ public class Startup
         services.AddSingleton<IBookService, BookService>();
         services.AddSingleton<IFaltasService, FaltasService>();
         services.AddSingleton<IProductoService, ProductoService>();
+        services.AddSingleton<IPujaService, PujaService>();
 
     }
 
@@ -38,6 +41,8 @@ public class Startup
         if (env.IsDevelopment())
         {
             app.UseDeveloperExceptionPage();
+            app.UseSwagger();
+            app.UseSwaggerUI();
 
         }
         else

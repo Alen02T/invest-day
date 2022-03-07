@@ -12,6 +12,10 @@ import { ProductosComponent } from './components/productos/productos.component';
 import { SeparacionComponent } from './components/separacion/separacion.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { PujasComponent } from './pages/pujas/pujas.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { ProductoService } from './services/producto.service';
+import { PujaService } from './services/puja.service';
 
 @NgModule({
   declarations: [
@@ -28,9 +32,11 @@ import { PujasComponent } from './pages/pujas/pujas.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [ProductoService, PujaService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

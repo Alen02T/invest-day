@@ -44,7 +44,7 @@
 
     @media screen and (max-width: 300px) {
       #boton {
-       padding-right: 40px;
+        padding-right: 40px;
       }
     }
   </style>
@@ -52,34 +52,19 @@
 
 <body>
 
-<!-- Productos -->
-<div class="row px-5 pt-5">
-    <div class="col-md-4 mt-4 mt-sm-0 card-container" *ngFor="let item of PRODUCTOS">
+  <!-- Productos -->
+  <div class="row px-5 pt-5">
+    <div class="col-md-4 mt-4 mt-sm-0 card-container" *ngFor="let item of productos">
       <div class="card text-center product p-4 pt-5 border-0 h-100 rounded-0">
-        <img class="img-fluid d-block mx-auto" src="{{item.ruta}}"
-          alt="Ropa D&G">
+        <img class="img-fluid d-block mx-auto" src="{{item.ruta}}" alt="Ropa D&G">
         <div class="card-body p-4 py-0 h-xs-440p">
           <h5 class="card-title font-weight-semi-bold mb-3 w-xl-220p mx-auto">{{item.nombre}}</h5>
           <p class="price">{{item.precio}}€</p>
         </div>
         <p class="btn w-100 px-4 mx-auto">
-          <a href="http://localhost:4200/producto/{{item.IDproducto}}"><button id="boton" class="btn btn-dark w-100" name="add-button">Pujar</button></a>
+          <a href="http://localhost:4200/producto/{{item.id}}"><button id="boton" class="btn btn-dark w-100"
+              name="add-button">Pujar</button></a>
         </p>
       </div>
     </div>
-</div>
-<div class="row px-5 pt-5">
-  <div class="col-md-4 mt-4 mt-sm-0 card-container" *ngFor="let item2 of PRODUCTOS2">
-    <div class="card text-center product p-4 pt-5 border-0 h-100 rounded-0">
-      <img class="img-fluid d-block mx-auto" src="{{item2.ruta}}"
-        alt="Ropa D&G">
-      <div class="card-body p-4 py-0 h-xs-440p">
-        <h5 class="card-title font-weight-semi-bold mb-3 w-xl-220p mx-auto">{{item2.nombre}}</h5>
-        <p class="price">{{item2.precio}}€</p>
-      </div>
-      <p class="btn w-100 px-4 mx-auto">
-        <a href="http://localhost:4200/producto/{{item2.IDproducto}}"><button id="boton" class="btn btn-dark w-100" name="add-button">Pujar</button></a>
-      </p>
-    </div>
   </div>
-</div>

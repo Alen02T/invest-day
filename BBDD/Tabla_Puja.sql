@@ -1,0 +1,1 @@
+CREATE TABLE Puja(Id int IDENTITY(1,1) NOT NULL PRIMARY KEY, Cantidad float, Id_producto int FOREIGN KEY (Id_producto) REFERENCES Producto(Id))
