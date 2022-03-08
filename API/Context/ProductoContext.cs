@@ -1,11 +1,9 @@
 using System.Data.Entity;
 
-public class LibraryContext : DbContext
+public class ProductoContext : DbContext
 {
-    public LibraryContext(string connectionString) : base(connectionString)
+    public ProductoContext(string connectionString) : base(connectionString)
     { }
-    public DbSet<BookEntity> Books { get; set; }
-    public DbSet<FaltasEntity> Faltas { get; set; }
     public DbSet<ProductoEntity> Producto { get; set; }
     public DbSet<PujaEntity> Puja { get; set; }
 

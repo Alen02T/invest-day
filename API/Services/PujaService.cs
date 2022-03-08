@@ -3,10 +3,10 @@ using Microsoft.AspNetCore.JsonPatch;
 
 public class PujaService : IPujaService
 {
-    private readonly LibraryContext _context;
+    private readonly ProductoContext _context;
     private readonly IMapper _mapper;
 
-    public PujaService(LibraryContext context, IMapper mapper)
+    public PujaService(ProductoContext context, IMapper mapper)
     {
         _context = context;
         _mapper = mapper;

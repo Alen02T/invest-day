@@ -13,15 +13,15 @@ public class Startup
     public void ConfigureServices(IServiceCollection services)
     {
         services.AddControllersWithViews();
-        services.AddTransient<LibraryContext>(_ =>
-            new LibraryContext(Configuration.GetConnectionString("DefaultConnection")));
+        services.AddTransient<ProductoContext>(_ =>
+            new ProductoContext(Configuration.GetConnectionString("DefaultConnection")));
 
         services.AddSwaggerGen();
 
         var mapperConfig = new MapperConfiguration(mc =>
         {
-            mc.AddProfile(new BookProfile());
-            mc.AddProfile(new FaltasProfile());
+            /*mc.AddProfile(new BookProfile());
+            mc.AddProfile(new FaltasProfile());*/
             mc.AddProfile(new ProductoProfile());
             mc.AddProfile(new PujaProfile());
         });
@@ -29,8 +29,8 @@ public class Startup
         IMapper mapper = mapperConfig.CreateMapper();
         services.AddSingleton(mapper);
 
-        services.AddSingleton<IBookService, BookService>();
-        services.AddSingleton<IFaltasService, FaltasService>();
+        /*services.AddSingleton<IBookService, BookService>();
+        services.AddSingleton<IFaltasService, FaltasService>();*/
         services.AddSingleton<IProductoService, ProductoService>();
         services.AddSingleton<IPujaService, PujaService>();
 

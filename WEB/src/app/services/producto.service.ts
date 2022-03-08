@@ -2,9 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
-import { baseP } from '../models/baseProducto.model';
 import { Producto } from '../models/producto.model';
-import { Productos } from '../models/productos';
 
 @Injectable()
 export class ProductoService {
@@ -37,19 +35,5 @@ export class ProductoService {
         }
       )
     return result;
-  }
-
-  update(id: number, nombre: string, precio: number, ruta: string): Observable<any> {
-
-    let bodyData = new baseP();
-
-    bodyData.nombre = nombre;
-
-    bodyData.precio = precio;
-
-    bodyData.ruta = ruta;
-
-    return this.http.put(environment.API_URL + 'producto/' + id, bodyData);
-
   }
 }

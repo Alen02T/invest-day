@@ -3,10 +3,10 @@ using Microsoft.AspNetCore.JsonPatch;
 
 public class ProductoService : IProductoService
 {
-    private readonly LibraryContext _context;
+    private readonly ProductoContext _context;
     private readonly IMapper _mapper;
 
-    public ProductoService(LibraryContext context, IMapper mapper)
+    public ProductoService(ProductoContext context, IMapper mapper)
     {
         _context = context;
         _mapper = mapper;

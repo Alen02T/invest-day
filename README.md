@@ -1,2 +1,2 @@
-# AngularBase
-Este un ejemplo base de proyecto de angular. Utilizado tanto para las prácticas como para el examen.
+# Angular y API Subastas
+Este un ejemplo de proyecto de subastas de Angular y API. Utilizado tanto para las prácticas.

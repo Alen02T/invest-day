@@ -35,12 +35,14 @@ export class PujasComponent implements OnInit {
   }
 
   onSubmit() {
-    if (this.productoForm.value.productoPrecio > this.productos?.precio!) {
-      this._productoService.update(this.idProducto, this.productos?.nombre!, this.productoForm.value.productoPrecio, this.productos?.ruta!).subscribe(apiProductos => this.productos = apiProductos && this.productoForm.value.productoPuja <= this.maxPuja) {
+    if (this.productoForm.value.productoPuja <= this.maxPuja) {
+      
         alert("Tienes que introducir un precio mayor que la actual puja máxima")
+        
       }
     else {
         this._pujaService.postPujaData(this.productoForm.value.productoPuja, this.idProducto);
+        window.location.href = "http://localhost:4200";
       }
     }
 

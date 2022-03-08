@@ -81,10 +81,10 @@
               <h4>Puja más alta: {{maxPuja}} €</h4><br><br>
               <form [formGroup]="productoForm" (ngSubmit)="onSubmit()">
                 <label for="puja">Precio a pujar: &nbsp;</label>
-                <input id="puja" type="number" min="{{productos?.precio}}" formControlName="productoPuja"
-                  required><br><br>
-                <div class="main-border-button"><button type="submit">Pujar</button>
-                </div>
+                <input id="puja" type="number" formControlName="productoPuja" required><br><br>
+                  <div class="main-border-button">
+                    <button type="submit">Pujar</button>
+                  </div>
               </form>
             </div>
           </div>
