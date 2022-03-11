@@ -1557,11 +1557,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/david/Escritorio/Proyecto-Angular/API/Api.csproj",
+      "projectUniqueName": "/home/david/Escritorio/Invest Day/API/Api.csproj",
       "projectName": "Api",
-      "projectPath": "/home/david/Escritorio/Proyecto-Angular/API/Api.csproj",
+      "projectPath": "/home/david/Escritorio/Invest Day/API/Api.csproj",
       "packagesPath": "/home/david/.nuget/packages/",
-      "outputPath": "/home/david/Escritorio/Proyecto-Angular/API/obj/",
+      "outputPath": "/home/david/Escritorio/Invest Day/API/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/home/david/.nuget/NuGet/NuGet.Config"

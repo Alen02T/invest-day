@@ -6,7 +6,7 @@ import { ProductoService } from 'src/app/services/producto.service';
 @Component({
   selector: 'app-productos',
   templateUrl: './productos.component.html',
-  styleUrls: ['../../domenico/css/bootstrap.css', './productos.component.css']
+  styleUrls: ['productos.component.css']
 })
 export class ProductosComponent implements OnInit {
 

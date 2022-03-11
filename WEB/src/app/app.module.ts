@@ -5,7 +5,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponentComponent } from './pages/home/home-component/home-component.component';
 import { Error404Component } from './error404/error404.component';
-import { DomenicoComponent } from './domenico/domenico.component';
 import { CabeceraComponent } from './components/cabecera/cabecera.component';
 import { DescripcionComponent } from './components/descripcion/descripcion.component';
 import { ProductosComponent } from './components/productos/productos.component';
@@ -14,21 +13,23 @@ import { FooterComponent } from './components/footer/footer.component';
 import { PujasComponent } from './pages/pujas/pujas.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { ProductoService } from './services/producto.service';
-import { PujaService } from './services/puja.service';
+import { TareasComponent } from './components/tareas/tareas.component';
+import { TareaService } from './services/tarea.service';
+import { Pagina2Component } from './pages/pagina2/pagina2.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponentComponent,
     Error404Component,
-    DomenicoComponent,
     CabeceraComponent,
     DescripcionComponent,
     ProductosComponent,
     SeparacionComponent,
     FooterComponent,
-    PujasComponent
+    PujasComponent,
+    TareasComponent,
+    Pagina2Component
   ],
   imports: [
     BrowserModule,
@@ -36,7 +37,7 @@ import { PujaService } from './services/puja.service';
     ReactiveFormsModule,
     HttpClientModule
   ],
-  providers: [ProductoService, PujaService],
+  providers: [TareaService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

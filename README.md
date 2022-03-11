@@ -1,2 +1,2 @@
-# Angular y API Subastas
-Este un ejemplo de proyecto de subastas de Angular y API. Utilizado tanto para las prácticas.
+# Angular y API Tareas
+Este un ejemplo de proyecto de tareas de Angular y API.

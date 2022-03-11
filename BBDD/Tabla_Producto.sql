@@ -1,1 +1,0 @@
-CREATE TABLE Producto (Id int IDENTITY(1,1) NOT NULL PRIMARY KEY, Nombre varchar(100), Precio float, Ruta varchar(300))

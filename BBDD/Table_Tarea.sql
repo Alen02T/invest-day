@@ -1,0 +1,1 @@
+CREATE TABLE Tarea(Id int IDENTITY(1,1) PRIMARY KEY, Nombre varchar(50), Descripción varchar(150), Fecha_tarea date, N_telefono int, Link_maps varchar(225), Pagina_web varchar(200), Comentarios varchar(300))

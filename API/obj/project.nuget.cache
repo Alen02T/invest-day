@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "tBJXDrvAnIu6lFpjw1o19uSA8dld/EFZAdX3IHG9c0XbZ6YOtHEBIkOt+OJRkH3nI564b9xN7bCRlZzuCp+BfQ==",
+  "dgSpecHash": "6kTLtHM7jND+TcoQMnuK0uopr3TMHALqPx+5E25fxS+WsGQ9TqUvRHL89g3mSNz28ISXCHDaWWGmv7BDWRmg+Q==",
   "success": true,
-  "projectFilePath": "/home/david/Escritorio/Proyecto-Angular/API/Api.csproj",
+  "projectFilePath": "/home/david/Escritorio/Invest Day/API/Api.csproj",
   "expectedPackageFiles": [
     "/home/david/.nuget/packages/automapper/10.1.1/automapper.10.1.1.nupkg.sha512",
     "/home/david/.nuget/packages/automapper.extensions.microsoft.dependencyinjection/8.1.1/automapper.extensions.microsoft.dependencyinjection.8.1.1.nupkg.sha512",

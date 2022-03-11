@@ -39,12 +39,12 @@ export class PujasComponent implements OnInit {
       
         alert("Tienes que introducir un precio mayor que la actual puja máxima")
         
-      }
+    }
     else {
         this._pujaService.postPujaData(this.productoForm.value.productoPuja, this.idProducto);
         window.location.href = "http://localhost:4200";
-      }
     }
+  }
 
     guardarMax() {
       this.pujas?.forEach(element => {
