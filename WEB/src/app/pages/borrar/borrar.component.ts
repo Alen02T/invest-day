@@ -5,15 +5,14 @@ import { Tarea } from 'src/app/models/tarea.model';
 import { TareaService } from 'src/app/services/tarea.service';
 
 @Component({
-  selector: 'tareas',
-  templateUrl: './tareas.component.html',
-  styleUrls: ['./tareas.component.css']
+  selector: 'borrar',
+  templateUrl: './borrar.component.html',
+  styleUrls: ['./borrar.component.css']
 })
-export class TareasComponent {
+export class BorrarComponent implements OnInit {
 
-  tareas: Tarea[] | null;
+  tareas: Tarea | null;
   idTarea = 0;
-  fecha = new Date();
 
   constructor(private fb: FormBuilder, private _tareaService: TareaService, private activatedRoute: ActivatedRoute) {
     this.tareas = null;
@@ -22,6 +21,7 @@ export class TareasComponent {
   tareaForm = this.fb.group({
     tareaNombre: ['', Validators.required],
     tareaDescripcion: ['', Validators.required],
+    tareaFecha: ['', Validators.required],
     tareaTelefono: ['', Validators.required],
     tareaMaps: ['', Validators.required],
     tareaWeb: ['', Validators.required],
@@ -30,12 +30,15 @@ export class TareasComponent {
 
   ngOnInit(): void {
     this.activatedRoute.paramMap.subscribe((parameters: any) => { this.idTarea = parameters.get("id") });
-    this._tareaService.getTareaData().subscribe(apiDatosTareas => this.tareas = apiDatosTareas);
+    this._tareaService.getTareaId(this.idTarea).subscribe(apiIdTarea => this.tareas = apiIdTarea)
   }
 
   onSubmit() {
-    this._tareaService.postTareaData(this.tareaForm.value, this.fecha);
-    window.location.reload();
+  }
+
+  borrar() {
+    this._tareaService.deletePost(this.idTarea);
+    window.location.href = "http://localhost:4200";
   }
 
 }

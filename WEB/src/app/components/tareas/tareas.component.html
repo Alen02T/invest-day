@@ -1,45 +1,34 @@
-<html>
-<head>
-</head>
-<body>
-    <ul *ngFor="let item of tareas">
-        <li>- Id tarea: {{item.id}}</li>
-        <li>- Nombre: {{item.nombre}}</li>
-        <li>- Descripción: {{item.descripcion}}</li>
-        <li>- Fecha: {{item.fecha_tarea}}</li>
-        <li>- Nº teléfono: {{item.n_telefono}}</li>
-        <li>- Link Google Maps{{item.link_maps}}</li>
-        <li>- Link Página web: {{item.pagina_web}}</li>
-        <li>- Comentarios: {{item.comentarios}}</li>
-        <!--<a href="http://localhost:4200/tarea/{{item.id}}"><button id="boton">Ver tarea</button></a>-->
-        <form (ngSubmit)="borrar()">
-            <button type="submit" id="boton">Borrar tarea</button>
-        </form>
-    </ul>
+<ul *ngFor="let item of tareas">
+    <li>- Id tarea: {{item.id}}</li>
+    <li>- Nombre: {{item.nombre}}</li>
+    <li>- Descripción: {{item.descripcion}}</li>
+    <li>- Fecha: {{item.fecha_tarea}}</li>
+    <li>- Nº teléfono: {{item.n_telefono}}</li>
+    <li>- Link Google Maps: {{item.link_maps}}</li>
+    <li>- Link Página web: {{item.pagina_web}}</li>
+    <li>- Comentarios: {{item.comentarios}}</li>
+    <a href="http://localhost:4200/tarea/borrar/{{item.id}}"><button id="boton">Borrar</button></a>
+    <a href="http://localhost:4200/tarea/actualizar/{{item.id}}"><button id="boton">Actualizar</button></a>
+</ul>
 
-    <form [formGroup]="tareaForm" (ngSubmit)="onSubmit()">
-        <label for="tarea-nombre">Nombre tarea: </label>
-        <input id="tarea-nombre" type="text" formControlName="tareaNombre" required><br><br>
+<form [formGroup]="tareaForm" (ngSubmit)="onSubmit()">
+    <label for="tarea-nombre">Nombre tarea: </label>
+    <input id="tarea-nombre" type="text" formControlName="tareaNombre" required><br><br>
 
-        <label for="tarea-descripcion">Descripción: </label>
-        <input id="tarea-descripcion" type="text" formControlName="tareaDescripcion"><br><br>
+    <label for="tarea-descripcion">Descripción: </label>
+    <input id="tarea-descripcion" type="text" formControlName="tareaDescripcion"><br><br>
 
-        <label for="tarea-fecha">Fecha tarea: </label>
-        <input id="tarea-fecha" type="text" formControlName="tareaFecha"><br><br>
+    <label for="tarea-telefono">Nº de teléfono: </label>
+    <input id="tarea-telefono" type="number" formControlName="tareaTelefono"><br><br>
 
-        <label for="tarea-telefono">Nº de teléfono: </label>
-        <input id="tarea-telefono" type="number" formControlName="tareaTelefono"><br><br>
+    <label for="tarea-maps">Link Google Maps: </label>
+    <input id="tarea-maps" type="url" formControlName="tareaMaps"><br><br>
 
-        <label for="tarea-maps">Link Google Maps: </label>
-        <input id="tarea-maps" type="text" formControlName="tareaMaps"><br><br>
+    <label for="tarea-web">Link Página Web: </label>
+    <input id="tarea-web" type="url" formControlName="tareaWeb"><br><br>
 
-        <label for="tarea-web">Link Página Web: </label>
-        <input id="tarea-web" type="text" formControlName="tareaWeb"><br><br>
+    <label for="tarea-comentario">Comentario: </label>
+    <input id="tarea-comentario" type="text" formControlName="tareaComentario"><br><br>
 
-        <label for="tarea-comentario">Comentario: </label>
-        <input id="tarea-comentario" type="text" formControlName="tareaComentario"><br><br>
-
-        <button type="submit" [disabled]="!tareaForm.valid">Crear Tarea</button>
-      </form>
-</body>
-</html>
+    <button type="submit" [disabled]="!tareaForm.valid">Crear Tarea</button>
+</form>

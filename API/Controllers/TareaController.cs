@@ -28,6 +28,13 @@ public class TareaController : ControllerBase
         return Ok(_TareaService.GetAll());
     }
 
+    [HttpGet("p{Id}")]
+    [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(TareaDTO))]
+    public ActionResult<TareaDTO> GetPujas(int Id)
+    {
+        return Ok(_TareaService.GetAllTarea(Id));
+    }
+
     [HttpGet("{Id}")]
     [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(TareaDTO))]
     [ProducesResponseType(StatusCodes.Status404NotFound)]

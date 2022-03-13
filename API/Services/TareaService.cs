@@ -36,6 +36,11 @@ public class TareaService : ITareaService
         return _mapper.Map<IEnumerable<TareaDTO>>(_context.Tarea.Select(x => x));
     }
 
+    public IEnumerable<TareaDTO> GetAllTarea(int guid)
+    {
+        return _mapper.Map<IEnumerable<TareaDTO>>(_context.Tarea.Where(x => x.Id == guid));
+    }
+
     public TareaDTO GetByID(int guid)
     {
         return _mapper.Map<TareaDTO>(_context.Tarea.FirstOrDefault(x => x.Id == guid));

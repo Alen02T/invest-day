@@ -2,13 +2,19 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
+import { baseT } from '../models/baseTarea.model';
 import { Tarea } from '../models/tarea.model';
 
 @Injectable()
 export class TareaService {
   constructor(private http: HttpClient) { }
+
   getTareaData(): Observable<Tarea[]> {
     return this.http.get<Tarea[]>(environment.API_URL + 'tarea');
+  }
+
+  getAllTarea(id: number): Observable<Tarea[]> {
+    return this.http.get<Tarea[]>(environment.API_URL + 'tarea/p' + id);
   }
 
   getTareaId(id: number): Observable<Tarea> {
@@ -17,28 +23,32 @@ export class TareaService {
   }
 
   public deletePost(id :number) {
-    this.http.delete(environment.API_URL +'tarea/'+id).subscribe(data => {
-      console.log(data);
+    this.http.delete(environment.API_URL +'tarea/'+id).subscribe(data => {     
+      console.log(data);     
     });
   }
 
-  /*update(id :number , nombre : string, nuevoP : number ,rutaimg : string): Observable<any> {
-    let bodyData =new baseP();
+  update(id :number , nombre : string, descripcion : string, fecha_tarea : Date, n_telefono : number, link_maps : string, pagina_web : string, comentarios : string): Observable<any> {
+    let bodyData =new baseT();
     bodyData.nombre=nombre;
-    bodyData.precio=nuevoP;
-    bodyData.rutaimg=rutaimg;
-    return this.http.put(environment.API_URL + 'producto/'+id, bodyData);
-  }*/
+    bodyData.descripcion=descripcion;
+    bodyData.fecha_tarea=fecha_tarea;
+    bodyData.n_telefono=n_telefono;
+    bodyData.link_maps=link_maps;
+    bodyData.pagina_web=pagina_web;
+    bodyData.comentarios=comentarios;
+    return this.http.put(environment.API_URL + 'tarea/'+id, bodyData);
+  }
 
-  postTareaData(body: any): Tarea {
+  postTareaData(body : any, fecha_tarea : Date): Tarea {
     let bodyData = new Tarea();
-    bodyData.nombre = body.nombre;
-    bodyData.descripcion = body.descripcion;
-    bodyData.fecha_tarea = body.fecha_tarea;
-    bodyData.n_telefono = body.n_telefono;
-    bodyData.link_maps = body.link_maps;
-    bodyData.pagina_web = body.pagina_web;
-    bodyData.comentarios = body.comentarios;
+    bodyData.nombre=body.tareaNombre;
+    bodyData.descripcion=body.tareaDescripcion;
+    bodyData.fecha_tarea=fecha_tarea;
+    bodyData.n_telefono=body.tareaTelefono;
+    bodyData.link_maps=body.tareaMaps;
+    bodyData.pagina_web=body.tareaWeb;
+    bodyData.comentarios=body.tareaComentario;
 
 
     let result = new Tarea();

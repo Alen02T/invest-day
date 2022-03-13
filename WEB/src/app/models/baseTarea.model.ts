@@ -1,5 +1,4 @@
-export class Tarea {
-  id: number;
+export class baseT {
 
   nombre: string | null;
 
@@ -16,7 +15,6 @@ export class Tarea {
   comentarios: string | null;
 
   constructor() {
-    this.id = 0;
     this.nombre = null;
     this.descripcion = null;
     this.fecha_tarea=null;

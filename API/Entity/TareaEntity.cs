@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 public class TareaEntity
 {
     public string Nombre { get; set; }
-    public string Descripción { get; set; }
+    public string Descripcion { get; set; }
     public DateTime Fecha_tarea { get; set; }
     public int N_telefono { get; set; }
     public string Link_maps { get; set; }

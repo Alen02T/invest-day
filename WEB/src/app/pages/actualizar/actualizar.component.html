@@ -1,0 +1,23 @@
+<h1 style="text-align: center;">Actualizar</h1>
+
+<form [formGroup]="tareaForm" (ngSubmit)="onSubmit()">
+    <label for="tarea-nombre">Nombre tarea: </label>
+    <input id="tarea-nombre" value="{{tareas?.nombre}}" type="text" formControlName="tareaNombre"><br><br>
+
+    <label for="tarea-descripcion">Descripción: </label>
+    <input id="tarea-descripcion" value="{{tareas?.descripcion}}" type="text" formControlName="tareaDescripcion"><br><br>
+
+    <label for="tarea-telefono">Número de teléfono: </label>
+    <input id="tarea-telefono" value="{{tareas?.n_telefono}}" type="number" formControlName="tareaTelefono"><br><br>
+
+    <label for="tarea-maps">Link Google Maps: </label>
+    <input id="tarea-maps" value="{{tareas?.link_maps}}" type="url" formControlName="tareaMaps"><br><br>
+
+    <label for="tarea-web">Link Página Web: </label>
+    <input id="tarea-web" value="{{tareas?.pagina_web}}" type="url" formControlName="tareaWeb"><br><br>
+
+    <label for="tarea-comentario">Comentarios: </label>
+    <input id="tarea-comentario" value="{{tareas?.comentarios}}" type="text" formControlName="tareaComentario"><br><br>
+
+    <button type="submit">Actualizar</button>
+</form>

@@ -2,9 +2,9 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { TareasComponent } from './components/tareas/tareas.component';
 import { Error404Component } from './error404/error404.component';
+import { ActualizarComponent } from './pages/actualizar/actualizar.component';
 import { HomeComponentComponent } from './pages/home/home-component/home-component.component';
-import { Pagina2Component } from './pages/pagina2/pagina2.component';
-import { PujasComponent } from './pages/pujas/pujas.component';
+import { BorrarComponent } from './pages/borrar/borrar.component';
 
 const routes: Routes = [
   {
@@ -12,12 +12,12 @@ const routes: Routes = [
     component: HomeComponentComponent,
   },
   {
-    path: 'tarea/:id',
-    component: Pagina2Component,
+    path: 'tarea/borrar/:id',
+    component: BorrarComponent
   },
   {
-    path: 'producto/:id',
-    component: PujasComponent,
+    path: 'tarea/actualizar/:id',
+    component: ActualizarComponent,
   },
   {
     path: '**',

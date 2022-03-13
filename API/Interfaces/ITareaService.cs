@@ -5,6 +5,8 @@ public interface ITareaService
 {
     public IEnumerable<TareaDTO> GetAll();
 
+    public IEnumerable<TareaDTO> GetAllTarea(int guid);
+
     public TareaDTO GetByID(int guid);
 
     public TareaDTO Add(BaseTareaDTO guid);

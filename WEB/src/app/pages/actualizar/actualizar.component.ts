@@ -5,13 +5,13 @@ import { Tarea } from 'src/app/models/tarea.model';
 import { TareaService } from 'src/app/services/tarea.service';
 
 @Component({
-  selector: 'tareas',
-  templateUrl: './tareas.component.html',
-  styleUrls: ['./tareas.component.css']
+  selector: 'actualizar',
+  templateUrl: './actualizar.component.html',
+  styleUrls: ['./actualizar.component.css']
 })
-export class TareasComponent {
+export class ActualizarComponent implements OnInit {
 
-  tareas: Tarea[] | null;
+  tareas: Tarea | null;
   idTarea = 0;
   fecha = new Date();
 
@@ -30,12 +30,13 @@ export class TareasComponent {
 
   ngOnInit(): void {
     this.activatedRoute.paramMap.subscribe((parameters: any) => { this.idTarea = parameters.get("id") });
-    this._tareaService.getTareaData().subscribe(apiDatosTareas => this.tareas = apiDatosTareas);
+    this._tareaService.getTareaId(this.idTarea).subscribe(apiIdTarea => this.tareas = apiIdTarea)
   }
 
   onSubmit() {
-    this._tareaService.postTareaData(this.tareaForm.value, this.fecha);
-    window.location.reload();
+    
+    this._tareaService.update(this.idTarea, this.tareaForm.value.tareaNombre, this.tareaForm.value.tareaDescripcion, this.fecha, this.tareaForm.value.tareaTelefono, this.tareaForm.value.tareaMaps, this.tareaForm.value.tareaWeb, this.tareaForm.value.tareaComentario).subscribe(apiTareas => this.tareas=apiTareas)
+    window.location.href = "http://localhost:4200";
   }
 
 }
