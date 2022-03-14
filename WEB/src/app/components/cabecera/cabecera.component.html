@@ -7,10 +7,9 @@
       </a>
   
       <ul class="nav nav-pills">
-        <li class="nav-item"><a href="#" class="nav-link active" aria-current="page">Home</a></li>
-        <li class="nav-item"><a href="#" class="nav-link">Tareas</a></li>
-        <li class="nav-item"><a href="#" class="nav-link">Sugerencias</a></li>
-        <li class="nav-item"><a href="#" class="nav-link">Sobre nosotros</a></li>
+        <li class="nav-item"><a class="nav-link active" aria-current="page">Home</a></li>
+        <li class="nav-item"><a [routerLink]="'task'"  class="nav-link">Añadir Tareas</a></li>
+        <li class="nav-item"><a [routerLink]="'see-tasks'" class="nav-link">Ver Tareas</a></li>
       </ul>
     </header>
   </div>

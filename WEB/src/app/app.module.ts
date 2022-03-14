@@ -5,12 +5,19 @@ import { AppComponent } from './app.component';
 import { HomeComponentComponent } from './pages/home/home-component/home-component.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { BookService } from './services/book.service';
 import { NgChartsModule } from 'ng2-charts';
 import { CabeceraComponent } from './components/cabecera/cabecera.component';
 import { SectionComponent } from './components/section/section.component';
 import { LastActivitiesComponent } from './components/last-activities/last-activities.component';
 import { SugerenciasComponent } from './components/sugerencias/sugerencias.component';
+import { TareaService } from './services/tarea.service';
+import { TaskPageComponent } from './pages/task-page/task-page.component';
+import { CreateTaskComponent } from './components/create-task/create-task.component';
+import { TareasComponent } from './components/tareas/tareas.component';
+import { BorrarComponent } from './components/borrar/borrar.component';
+import { ActualizarComponent } from './components/actualizar/actualizar.component';
+import { Erro404Component } from './components/erro404/erro404.component';
+import { SeeTasksComponent } from './components/see-tasks/see-tasks.component';
 
 @NgModule({
   declarations: [
@@ -20,9 +27,16 @@ import { SugerenciasComponent } from './components/sugerencias/sugerencias.compo
     SectionComponent,
     LastActivitiesComponent,
     SugerenciasComponent,
+    TaskPageComponent,
+    CreateTaskComponent,
+    TareasComponent,
+    BorrarComponent,
+    ActualizarComponent,
+    Erro404Component,
+    SeeTasksComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, ReactiveFormsModule,HttpClientModule,NgChartsModule],
-  providers: [BookService],
+  providers: [TareaService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

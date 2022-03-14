@@ -5,3 +5,5 @@ public class BaseBookDTO
     public int Pages { get; set; }
     public DateTime? PublishDate { get; set; }
 }
+
+

@@ -12,22 +12,24 @@ public class Startup
     public void ConfigureServices(IServiceCollection services)
     {
         services.AddControllersWithViews();
-        services.AddSingleton<LibraryContext>(_ =>
-            new LibraryContext(Configuration.GetConnectionString("DefaultConnection")));
+        services.AddSingleton<TareaContext>(_ =>
+            new TareaContext(Configuration.GetConnectionString("DefaultConnection")));
 
 
 
         var mapperConfig = new MapperConfiguration(mc =>
         {
-            mc.AddProfile(new BookProfile());
-            mc.AddProfile(new FaltasProfile());
+            //mc.AddProfile(new BookProfile());
+            //mc.AddProfile(new FaltasProfile());
+            mc.AddProfile(new TareaProfile());
         });
 
         IMapper mapper = mapperConfig.CreateMapper();
         services.AddSingleton(mapper);
 
-        services.AddSingleton<IBookService, BookService>();
-        services.AddSingleton<IFaltasService, FaltasService>();
+        services.AddSingleton<ITareaService,TareaService>();
+        //services.AddSingleton<IBookService, BookService>();
+        //services.AddSingleton<IFaltasService, FaltasService>();
 
     }
 
