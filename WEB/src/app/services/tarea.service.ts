@@ -28,7 +28,7 @@ export class TareaService {
     });
   }
 
-  update(id :number , nombre : string, descripcion : string, fecha_tarea : Date, n_telefono : number, link_maps : string, pagina_web : string, comentarios : string): Observable<any> {
+  update(id : number , nombre : string, descripcion : string, fecha_tarea : Date, n_telefono : number, link_maps : string, pagina_web : string, comentarios : string): Observable<any> {
     let bodyData =new baseT();
     bodyData.nombre=nombre;
     bodyData.descripcion=descripcion;

@@ -1,23 +1,43 @@
 <h1 style="text-align: center;">Actualizar</h1>
 
-<form [formGroup]="tareaForm" (ngSubmit)="onSubmit()">
+<form [formGroup]="nombreForm" (ngSubmit)="actualizarNombre()">
     <label for="tarea-nombre">Nombre tarea: </label>
     <input id="tarea-nombre" value="{{tareas?.nombre}}" type="text" formControlName="tareaNombre"><br><br>
 
+    <button type="submit" [disabled]="!nombreForm.valid">Actualizar</button>
+</form>
+
+<form [formGroup]="descripcionForm" (ngSubmit)="actualizarDescripcion()">
     <label for="tarea-descripcion">Descripción: </label>
     <input id="tarea-descripcion" value="{{tareas?.descripcion}}" type="text" formControlName="tareaDescripcion"><br><br>
 
+    <button type="submit" [disabled]="!descripcionForm.valid">Actualizar</button>
+</form>
+
+<form [formGroup]="telefonoForm" (ngSubmit)="actualizarTelefono()">
     <label for="tarea-telefono">Número de teléfono: </label>
     <input id="tarea-telefono" value="{{tareas?.n_telefono}}" type="number" formControlName="tareaTelefono"><br><br>
 
+    <button type="submit" [disabled]="!telefonoForm.valid">Actualizar</button>
+</form>
+
+<form [formGroup]="mapsForm" (ngSubmit)="actualizarMaps()">
     <label for="tarea-maps">Link Google Maps: </label>
-    <input id="tarea-maps" value="{{tareas?.link_maps}}" type="url" formControlName="tareaMaps"><br><br>
+    <input id="tarea-maps" value="{{tareas?.link_maps}}" type="text" formControlName="tareaMaps"><br><br>
 
+    <button type="submit" [disabled]="!mapsForm.valid">Actualizar</button>
+</form>
+
+<form [formGroup]="webForm" (ngSubmit)="actualizarWeb()">
     <label for="tarea-web">Link Página Web: </label>
-    <input id="tarea-web" value="{{tareas?.pagina_web}}" type="url" formControlName="tareaWeb"><br><br>
+    <input id="tarea-web" value="{{tareas?.pagina_web}}" type="text" formControlName="tareaWeb"><br><br>
 
+    <button type="submit" [disabled]="!webForm.valid">Actualizar</button>
+</form>
+
+<form [formGroup]="comentarioForm" (ngSubmit)="actualizarComentario()">
     <label for="tarea-comentario">Comentarios: </label>
     <input id="tarea-comentario" value="{{tareas?.comentarios}}" type="text" formControlName="tareaComentario"><br><br>
 
-    <button type="submit">Actualizar</button>
+    <button type="submit" [disabled]="!comentarioForm.valid">Actualizar</button>
 </form>
