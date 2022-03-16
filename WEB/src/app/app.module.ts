@@ -18,6 +18,12 @@ import { BorrarComponent } from './components/borrar/borrar.component';
 import { ActualizarComponent } from './components/actualizar/actualizar.component';
 import { Erro404Component } from './components/erro404/erro404.component';
 import { SeeTasksComponent } from './components/see-tasks/see-tasks.component';
+import { PaginaBienvenidaComponent } from './components/pagina-bienvenida/pagina-bienvenida.component';
+import { NoTaskPageComponent } from './pages/no-task-page/no-task-page.component';
+import { LastNoActivitiesComponent } from './components/last-no-activities/last-no-activities.component';
+import { AllTaskPageComponent } from './pages/all-task-page/all-task-page.component';
+import { InputFilterComponent } from './components/input-filter/input-filter.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +40,12 @@ import { SeeTasksComponent } from './components/see-tasks/see-tasks.component';
     ActualizarComponent,
     Erro404Component,
     SeeTasksComponent,
+    PaginaBienvenidaComponent,
+    NoTaskPageComponent,
+    LastNoActivitiesComponent,
+    AllTaskPageComponent,
+    InputFilterComponent,
+    FooterComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, ReactiveFormsModule,HttpClientModule,NgChartsModule],
   providers: [TareaService],

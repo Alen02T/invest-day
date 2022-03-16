@@ -11,6 +11,7 @@ public class TareaEntity
     public string Link_maps { get; set; }
     public string Pagina_web { get; set; }
     public string Comentarios { get; set; }
+    public string Realizada { get; set; }
     public int Id { get; set; }
 
 }

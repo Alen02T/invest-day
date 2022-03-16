@@ -1,3 +1,4 @@
+import { DatePipe, getLocaleDateFormat, getLocaleDateTimeFormat } from '@angular/common';
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
@@ -16,6 +17,7 @@ export class CreateTaskComponent implements OnInit {
   tareas: Tarea[] | null;
   idTarea = 0;
   fecha = new Date();
+  
 
   constructor(private fb: FormBuilder, private _tareaService: TareaService, private activatedRoute: ActivatedRoute) {
     this.tareas = null;
@@ -28,6 +30,8 @@ export class CreateTaskComponent implements OnInit {
     tareaMaps: ['', Validators.required],
     tareaWeb: ['', Validators.required],
     tareaComentario: ['', Validators.required],
+    tareaRealizada: ['No', Validators.required],
+    
   });
 
   ngOnInit(): void {
@@ -36,8 +40,10 @@ export class CreateTaskComponent implements OnInit {
   }
 
   onSubmit() {
+    
     this._tareaService.postTareaData(this.tareaForm.value, this.fecha);
-    window.location.reload();
+    window.location.href="/home";
+    
   }
 
 }

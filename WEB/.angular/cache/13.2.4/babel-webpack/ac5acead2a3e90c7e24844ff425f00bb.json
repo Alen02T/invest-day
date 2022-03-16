@@ -1,0 +1,1 @@
+{"ast":null,"code":"export class baseT {\n  constructor() {\n    this.nombre = \"\";\n    this.descripcion = \"\";\n    this.fecha_tarea = new Date();\n    this.n_telefono = 0;\n    this.link_maps = \"\";\n    this.pagina_web = \"\";\n    this.comentarios = \"\";\n    this.realizada = \"No\";\n  }\n\n}","map":null,"metadata":{},"sourceType":"module"}

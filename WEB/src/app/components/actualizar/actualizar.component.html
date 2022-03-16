@@ -1,36 +1,66 @@
 
 <app-cabecera></app-cabecera>
+<div class="container">
+  <h1 style="text-align: center;">Datos de la tarea a actualizar</h1>
 
- <div class="container">
-    <h1 style="text-align: center;">Datos de la tarea a actualizar</h1>
-    <form [formGroup]="tareaForm" (ngSubmit)="onSubmit()">
-    <h5>Id: {{tareas?.id}}</h5>
-    <div class="mb-3">
-        <label for="tarea-nombre">Nombre tarea: </label><br>
-        <input id="tarea-nombre" value="{{tareas?.nombre}}" type="text" formControlName="tareaNombre"><br><br>
-    </div>
-    <div class="mb-3">
-        <label for="tarea-descripcion">Descripción: </label><br>
-        <input id="tarea-descripcion" value="{{tareas?.descripcion}}" type="text" formControlName="tareaDescripcion"><br><br>
+    <form [formGroup]="nombreForm" (ngSubmit)="actualizarNombre()">
+      <div class="input-group mb-3">
+        <span class="input-group-text" id="inputGroup-sizing-default">Nombre tarea: </span>
+        <input id="tarea-nombre" formControlName="tareaNombre" type="text" class="form-control" value="{{tareas?.nombre}}" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+        <button type="submit" class="btn btn-warning" [disabled]="!nombreForm.valid">Actualizar</button>
       </div>
-      <div class="mb-3">
-        <label for="tarea-telefono">Número de teléfono: </label><br>
-    <input id="tarea-telefono" value="{{tareas?.n_telefono}}" type="number" formControlName="tareaTelefono"><br><br>
-      </div>
-      <div class="mb-3">
-        <label for="tarea-maps">Link Google Maps: </label><br>
-    <input id="tarea-maps" value="{{tareas?.link_maps}}" type="url" formControlName="tareaMaps"><br><br>
-      </div>
-      <div class="mb-3">
-        <label for="tarea-web">Link Página Web: </label><br>
-        <input id="tarea-web" value="{{tareas?.pagina_web}}" type="url" formControlName="tareaWeb"><br><br>
-      </div>
-      <div class="mb-3">
-        <label for="exampleFormControlTextarea1" class="form-label">Comentarios:</label><br>
-        <input id="tarea-comentario" value="{{tareas?.comentarios}}" type="text" formControlName="tareaComentario"><br><br>
-      </div>
-      <button type="submit" class="btn btn-warning">Actualizar</button>
     </form>
+
+    <form [formGroup]="descripcionForm" (ngSubmit)="actualizarDescripcion()">
+      <div class="input-group mb-3">
+        <span class="input-group-text" id="inputGroup-sizing-default">Descripcion: </span>
+        <input id="tarea-descripcion" formControlName="tareaDescripcion" type="text" class="form-control" value="{{tareas?.descripcion}}" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+        <button type="submit" class="btn btn-warning" [disabled]="!descripcionForm.valid">Actualizar</button>
+      </div>
+    </form>
+
+    <form [formGroup]="telefonoForm" (ngSubmit)="actualizarTelefono()">
+      <div class="input-group mb-3">
+        <span class="input-group-text" id="inputGroup-sizing-default">Número de teléfono: </span>
+        <input id="tarea-telefono" formControlName="tareaTelefono" type="number" class="form-control" value="{{tareas?.n_telefono}}" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+        <button type="submit" class="btn btn-warning" [disabled]="!telefonoForm.valid">Actualizar</button>
+      </div>
+    </form>
+
+    <form [formGroup]="mapsForm" (ngSubmit)="actualizarMaps()">
+      <div class="input-group mb-3">
+        <span class="input-group-text" id="inputGroup-sizing-default">Link Google Maps: </span>
+        <input id="tarea-maps" formControlName="tareaMaps" type="text" class="form-control" value="{{tareas?.link_maps}}"  aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+        <button type="submit" class="btn btn-warning" [disabled]="!mapsForm.valid">Actualizar</button>
+      </div>
+    </form>
+
+    <form [formGroup]="webForm" (ngSubmit)="actualizarWeb()">
+      <div class="input-group mb-3">
+        <span class="input-group-text" id="inputGroup-sizing-default">Link Página Web: </span>
+        <input id="tarea-web" formControlName="tareaWeb" type="text" class="form-control" value="{{tareas?.pagina_web}}"  aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+        <button type="submit" class="btn btn-warning" [disabled]="!webForm.valid">Actualizar</button>
+      </div>
+    </form>
+    
+
+    <form [formGroup]="comentarioForm" (ngSubmit)="actualizarComentario()">
+      <div class="input-group mb-3">
+        <span class="input-group-text" id="inputGroup-sizing-default">Comentarios: </span>
+        <input id="tarea-comentario" formControlName="tareaComentario" type="text" class="form-control" value="{{tareas?.comentarios}}"  aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+        <button type="submit" class="btn btn-warning" [disabled]="!comentarioForm.valid">Actualizar</button>
+      </div>
+    </form>
+
+    <form [formGroup]="realizadaForm" (ngSubmit)="actualizarRealizada()">
+      <div class="input-group mb-3">
+        <span class="input-group-text" id="inputGroup-sizing-default">¿Está la tarea ya realizada?(EScribe Si o No): </span>
+        <input id="tarea-realizada" formControlName="tareaRealizada" type="text" class="form-control" value="{{tareas?.realizada}}"  aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+        <button type="submit" class="btn btn-warning" [disabled]="!realizadaForm.valid">Actualizar</button>
+      </div>
+    </form>
+
+
 </div>
 
 

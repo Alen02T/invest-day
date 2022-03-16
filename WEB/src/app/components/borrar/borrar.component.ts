@@ -26,6 +26,7 @@ export class BorrarComponent implements OnInit {
     tareaMaps: ['', Validators.required],
     tareaWeb: ['', Validators.required],
     tareaComentario: ['', Validators.required],
+    
   });
 
   ngOnInit(): void {
@@ -38,7 +39,7 @@ export class BorrarComponent implements OnInit {
 
   borrar() {
     this._tareaService.deletePost(this.idTarea);
-    window.location.href = "http://localhost:4200";
+    window.location.href = "/home";
   }
 
 }

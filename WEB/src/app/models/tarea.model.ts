@@ -1,28 +1,33 @@
 export class Tarea {
-  id: number;
-
-  nombre: string | null;
-
-  descripcion: string | null;
-
-  fecha_tarea: Date | null;
-
-  n_telefono: number;
-
-  link_maps: string | null;
-
-  pagina_web: string | null;
-
-  comentarios: string | null;
 
   constructor() {
     this.id = 0;
-    this.nombre = null;
-    this.descripcion = null;
-    this.fecha_tarea=null;
+    this.nombre = "";
+    this.descripcion = "";
+    this.fecha_tarea = new Date();
     this.n_telefono = 0;
-    this.link_maps = null;
-    this.pagina_web = null;
-    this.comentarios = null;
+    this.link_maps = "";
+    this.pagina_web = "";
+    this.comentarios = "";
+    this.realizada = "No"
   }
+
+  id: number;
+
+  nombre: string;
+
+  descripcion: string;
+
+  fecha_tarea: Date;
+
+  n_telefono: number;
+
+  link_maps: string;
+
+  pagina_web: string;
+
+  comentarios: string;
+
+  realizada: string;
+
 }

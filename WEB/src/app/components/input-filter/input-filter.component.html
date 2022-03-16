@@ -1,0 +1,9 @@
+<div class="container">
+    <div class="input-group input-group-sm mb-3">
+        <span class="input-group-text" id="inputGroup-sizing-sm">Filtro</span>
+        <input  class="form-control" placeholder="Buscar por nombre" type="text" [formControl]="inputValue" />
+      </div>
+</div>
+
+
+<app-last-activities [filter]="inputValue.value"></app-last-activities>
