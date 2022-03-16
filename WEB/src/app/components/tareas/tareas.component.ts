@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { Tarea } from 'src/app/models/tarea.model';
@@ -15,8 +15,11 @@ export class TareasComponent {
   idTarea = 0;
   fecha = new Date();
 
+  @Input() filter: string | null;
+
   constructor(private fb: FormBuilder, private _tareaService: TareaService, private activatedRoute: ActivatedRoute) {
     this.tareas = null;
+    this.filter = null;
   }
 
   tareaForm = this.fb.group({
@@ -26,6 +29,7 @@ export class TareasComponent {
     tareaMaps: ['', Validators.required],
     tareaWeb: ['', Validators.required],
     tareaComentario: ['', Validators.required],
+    tareaRealizada: ['No', Validators.required],
   });
 
   ngOnInit(): void {

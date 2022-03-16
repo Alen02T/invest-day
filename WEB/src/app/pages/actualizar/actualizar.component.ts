@@ -43,6 +43,10 @@ export class ActualizarComponent implements OnInit {
     tareaComentario: ['', Validators.required]
   });
 
+  realizadaForm = this.fb.group({
+    tareaRealizada: ['', Validators.required]
+  });
+
   ngOnInit(): void {
     this.activatedRoute.paramMap.subscribe((parameters: any) => { this.idTarea = parameters.get("id") });
     this._tareaService.getTareaId(this.idTarea).subscribe(apiIdTarea => this.tareas = apiIdTarea)
@@ -56,7 +60,7 @@ export class ActualizarComponent implements OnInit {
       alert("Para actualizar el campo tienes que poner un valor diferente al que ya estaba")
     }
     else {
-      this._tareaService.update(this.idTarea, this.nombreForm.value.tareaNombre, this.tareas?.descripcion!, this.tareas?.fecha_tarea!, this.tareas?.n_telefono!, this.tareas?.link_maps!, this.tareas?.pagina_web!, this.tareas?.comentarios!).subscribe(apiTareas => this.tareas=apiTareas)
+      this._tareaService.update(this.idTarea, this.nombreForm.value.tareaNombre, this.tareas?.descripcion!, this.tareas?.fecha_tarea!, this.tareas?.n_telefono!, this.tareas?.link_maps!, this.tareas?.pagina_web!, this.tareas?.comentarios!, this.tareas?.realizada!).subscribe(apiTareas => this.tareas=apiTareas)
       //this._tareaService.update(this.idTarea, this.tareaForm.value.tareaNombre, this.tareaForm.value.tareaDescripcion, this.fecha, this.tareaForm.value.tareaTelefono, this.tareaForm.value.tareaMaps, this.tareaForm.value.tareaWeb, this.tareaForm.value.tareaComentario).subscribe(apiTareas => this.tareas=apiTareas)
       window.location.href = "http://localhost:4200";
     }
@@ -67,7 +71,7 @@ export class ActualizarComponent implements OnInit {
       alert("Para actualizar el campo tienes que poner un valor diferente al que ya estaba")
     }
     else {
-      this._tareaService.update(this.idTarea, this.tareas?.nombre!, this.descripcionForm.value.tareaDescripcion, this.tareas?.fecha_tarea!, this.tareas?.n_telefono!, this.tareas?.link_maps!, this.tareas?.pagina_web!, this.tareas?.comentarios!).subscribe(apiTareas => this.tareas=apiTareas)
+      this._tareaService.update(this.idTarea, this.tareas?.nombre!, this.descripcionForm.value.tareaDescripcion, this.tareas?.fecha_tarea!, this.tareas?.n_telefono!, this.tareas?.link_maps!, this.tareas?.pagina_web!, this.tareas?.comentarios!, this.tareas?.realizada!).subscribe(apiTareas => this.tareas=apiTareas)
       //this._tareaService.update(this.idTarea, this.tareaForm.value.tareaNombre, this.tareaForm.value.tareaDescripcion, this.fecha, this.tareaForm.value.tareaTelefono, this.tareaForm.value.tareaMaps, this.tareaForm.value.tareaWeb, this.tareaForm.value.tareaComentario).subscribe(apiTareas => this.tareas=apiTareas)
       window.location.href = "http://localhost:4200";
     }
@@ -78,7 +82,7 @@ export class ActualizarComponent implements OnInit {
       alert("Para actualizar el campo tienes que poner un valor diferente al que ya estaba")
     }
     else {
-      this._tareaService.update(this.idTarea, this.tareas?.nombre!, this.tareas?.descripcion!, this.tareas?.fecha_tarea!, this.telefonoForm.value.tareaTelefono, this.tareas?.link_maps!, this.tareas?.pagina_web!, this.tareas?.comentarios!).subscribe(apiTareas => this.tareas=apiTareas)
+      this._tareaService.update(this.idTarea, this.tareas?.nombre!, this.tareas?.descripcion!, this.tareas?.fecha_tarea!, this.telefonoForm.value.tareaTelefono, this.tareas?.link_maps!, this.tareas?.pagina_web!, this.tareas?.comentarios!, this.tareas?.realizada!).subscribe(apiTareas => this.tareas=apiTareas)
       //this._tareaService.update(this.idTarea, this.tareaForm.value.tareaNombre, this.tareaForm.value.tareaDescripcion, this.fecha, this.tareaForm.value.tareaTelefono, this.tareaForm.value.tareaMaps, this.tareaForm.value.tareaWeb, this.tareaForm.value.tareaComentario).subscribe(apiTareas => this.tareas=apiTareas)
       window.location.href = "http://localhost:4200";
     }
@@ -89,7 +93,7 @@ export class ActualizarComponent implements OnInit {
       alert("Para actualizar el campo tienes que poner un valor diferente al que ya estaba")
     }
     else {
-      this._tareaService.update(this.idTarea, this.tareas?.nombre!, this.tareas?.descripcion!, this.tareas?.fecha_tarea!, this.tareas?.n_telefono!, this.mapsForm.value.tareaMaps, this.tareas?.pagina_web!, this.tareas?.comentarios!).subscribe(apiTareas => this.tareas=apiTareas)
+      this._tareaService.update(this.idTarea, this.tareas?.nombre!, this.tareas?.descripcion!, this.tareas?.fecha_tarea!, this.tareas?.n_telefono!, this.mapsForm.value.tareaMaps, this.tareas?.pagina_web!, this.tareas?.comentarios!, this.tareas?.realizada!).subscribe(apiTareas => this.tareas=apiTareas)
       //this._tareaService.update(this.idTarea, this.tareaForm.value.tareaNombre, this.tareaForm.value.tareaDescripcion, this.fecha, this.tareaForm.value.tareaTelefono, this.tareaForm.value.tareaMaps, this.tareaForm.value.tareaWeb, this.tareaForm.value.tareaComentario).subscribe(apiTareas => this.tareas=apiTareas)
       window.location.href = "http://localhost:4200";
     }
@@ -100,7 +104,7 @@ export class ActualizarComponent implements OnInit {
       alert("Para actualizar el campo tienes que poner un valor diferente al que ya estaba")
     }
     else {
-      this._tareaService.update(this.idTarea, this.tareas?.nombre!, this.tareas?.descripcion!, this.tareas?.fecha_tarea!, this.tareas?.n_telefono!, this.tareas?.link_maps!, this.webForm.value.tareaWeb, this.tareas?.comentarios!).subscribe(apiTareas => this.tareas=apiTareas)
+      this._tareaService.update(this.idTarea, this.tareas?.nombre!, this.tareas?.descripcion!, this.tareas?.fecha_tarea!, this.tareas?.n_telefono!, this.tareas?.link_maps!, this.webForm.value.tareaWeb, this.tareas?.comentarios!, this.tareas?.realizada!).subscribe(apiTareas => this.tareas=apiTareas)
       //this._tareaService.update(this.idTarea, this.tareaForm.value.tareaNombre, this.tareaForm.value.tareaDescripcion, this.fecha, this.tareaForm.value.tareaTelefono, this.tareaForm.value.tareaMaps, this.tareaForm.value.tareaWeb, this.tareaForm.value.tareaComentario).subscribe(apiTareas => this.tareas=apiTareas)
       window.location.href = "http://localhost:4200";
     }
@@ -111,9 +115,24 @@ export class ActualizarComponent implements OnInit {
       alert("Para actualizar el campo tienes que poner un valor diferente al que ya estaba")
     }
     else {
-      this._tareaService.update(this.idTarea, this.tareas?.nombre!, this.tareas?.descripcion!, this.tareas?.fecha_tarea!, this.tareas?.n_telefono!, this.tareas?.link_maps!, this.tareas?.pagina_web!, this.comentarioForm.value.tareaComentario).subscribe(apiTareas => this.tareas=apiTareas)
+      this._tareaService.update(this.idTarea, this.tareas?.nombre!, this.tareas?.descripcion!, this.tareas?.fecha_tarea!, this.tareas?.n_telefono!, this.tareas?.link_maps!, this.tareas?.pagina_web!, this.comentarioForm.value.tareaComentario, this.tareas?.realizada!).subscribe(apiTareas => this.tareas=apiTareas)
       //this._tareaService.update(this.idTarea, this.tareaForm.value.tareaNombre, this.tareaForm.value.tareaDescripcion, this.fecha, this.tareaForm.value.tareaTelefono, this.tareaForm.value.tareaMaps, this.tareaForm.value.tareaWeb, this.tareaForm.value.tareaComentario).subscribe(apiTareas => this.tareas=apiTareas)
       window.location.href = "http://localhost:4200";
+    }
+  }
+
+  actualizarRealizada() {
+    if(this.realizadaForm.value.tareaRealizada == "Si" || this.realizadaForm.value.tareaRealizada == "No") {
+      this._tareaService.update(this.idTarea, this.tareas?.nombre!, this.tareas?.descripcion!, this.tareas?.fecha_tarea!, this.tareas?.n_telefono!, this.tareas?.link_maps!, this.tareas?.pagina_web!, this.tareas?.comentarios!, this.realizadaForm.value.tareaRealizada).subscribe(apiTareas => this.tareas=apiTareas)
+      window.location.href = "http://localhost:4200";
+    }
+    else {
+      if(this.realizadaForm.value.tareaRealizada == this.tareas?.realizada) {
+        alert("Para actualizar el campo tienes que poner un valor diferente al que ya estaba")
+      }
+      else {
+        alert("Tienes que introducir Si o No")
+      }
     }
   }
 

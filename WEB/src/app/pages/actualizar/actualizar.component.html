@@ -41,3 +41,10 @@
 
     <button type="submit" [disabled]="!comentarioForm.valid">Actualizar</button>
 </form>
+
+<form [formGroup]="realizadaForm" (ngSubmit)="actualizarRealizada()">
+    <label for="tarea-realizada">¿Está la tarea ya realizada?(EScribe Si o No): </label>
+    <input id="tarea-realizada" value="{{tareas?.realizada}}" type="text" formControlName="tareaRealizada"><br><br>
+
+    <button type="submit" [disabled]="!realizadaForm.valid">Actualizar</button>
+</form>

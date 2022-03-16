@@ -8,6 +8,7 @@ export class baseT {
     this.link_maps = "";
     this.pagina_web = "";
     this.comentarios = "";
+    this.realizada = "No";
   }
 
   nombre: string;
@@ -23,5 +24,7 @@ export class baseT {
   pagina_web: string;
 
   comentarios: string;
+
+  realizada: string;
 
 }

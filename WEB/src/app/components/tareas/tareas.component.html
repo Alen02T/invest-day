@@ -1,4 +1,7 @@
 <ul *ngFor="let item of tareas">
+    <section
+    *ngIf="item.nombre?.toUpperCase()?.includes(filter?.toUpperCase() ?? '')"
+    >
     <li>- Id tarea: {{item.id}}</li>
     <li>- Nombre: {{item.nombre}}</li>
     <li>- Descripción: {{item.descripcion}}</li>
@@ -7,8 +10,10 @@
     <li>- Link Google Maps: {{item.link_maps}}</li>
     <li>- Link Página web: {{item.pagina_web}}</li>
     <li>- Comentarios: {{item.comentarios}}</li>
+    <li>- Realizada: {{item.realizada}}</li>
     <a href="http://localhost:4200/tarea/borrar/{{item.id}}"><button id="boton">Borrar</button></a>
     <a href="http://localhost:4200/tarea/actualizar/{{item.id}}"><button id="boton">Actualizar</button></a>
+    </section>
 </ul>
 
 <form [formGroup]="tareaForm" (ngSubmit)="onSubmit()">

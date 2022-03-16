@@ -9,6 +9,7 @@ export class Tarea {
     this.link_maps = "";
     this.pagina_web = "";
     this.comentarios = "";
+    this.realizada = "No"
   }
 
   id: number;
@@ -26,5 +27,7 @@ export class Tarea {
   pagina_web: string;
 
   comentarios: string;
+
+  realizada: string;
 
 }

@@ -28,7 +28,7 @@ export class TareaService {
     });
   }
 
-  update(id : number , nombre : string, descripcion : string, fecha_tarea : Date, n_telefono : number, link_maps : string, pagina_web : string, comentarios : string): Observable<any> {
+  update(id : number , nombre : string, descripcion : string, fecha_tarea : Date, n_telefono : number, link_maps : string, pagina_web : string, comentarios : string, realizada : string): Observable<any> {
     let bodyData =new baseT();
     bodyData.nombre=nombre;
     bodyData.descripcion=descripcion;
@@ -37,6 +37,7 @@ export class TareaService {
     bodyData.link_maps=link_maps;
     bodyData.pagina_web=pagina_web;
     bodyData.comentarios=comentarios;
+    bodyData.realizada=realizada;
     return this.http.put(environment.API_URL + 'tarea/'+id, bodyData);
   }
 
@@ -49,6 +50,7 @@ export class TareaService {
     bodyData.link_maps=body.tareaMaps;
     bodyData.pagina_web=body.tareaWeb;
     bodyData.comentarios=body.tareaComentario;
+    bodyData.realizada=body.tareaRealizada;
 
 
     let result = new Tarea();
