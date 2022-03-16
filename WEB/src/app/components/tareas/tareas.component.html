@@ -37,3 +37,17 @@
 
     <button type="submit" [disabled]="!tareaForm.valid">Crear Tarea</button>
 </form>
+
+<div *ngFor="let item of tareas">
+    <ul *ngIf="item.realizada?.includes('No')">
+        <li>- Id tarea: {{item.id}}</li>
+        <li>- Nombre: {{item.nombre}}</li>
+        <li>- Descripción: {{item.descripcion}}</li>
+        <li>- Fecha: {{item.fecha_tarea}}</li>
+        <li>- Nº teléfono: {{item.n_telefono}}</li>
+        <li>- Link Google Maps: {{item.link_maps}}</li>
+        <li>- Link Página web: {{item.pagina_web}}</li>
+        <li>- Comentarios: {{item.comentarios}}</li>
+        <li>- Realizada: {{item.realizada}}</li>
+    </ul>
+</div>
